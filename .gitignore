@@ -133,6 +133,8 @@ celerybeat.pid
 env/
 venv/
 ENV/
+.mlflow_env
+mlflow_env/
 env.bak/
 venv.bak/
 
