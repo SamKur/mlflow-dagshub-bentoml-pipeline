@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Documents/Coding/MLOps_MLF_DH_BML/mlruns/0/2ff985a33c8f4b448e45c8dd04451665/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2ff985a33c8f4b448e45c8dd04451665
+run_name: clumsy-shrew-482
+run_uuid: 2ff985a33c8f4b448e45c8dd04451665
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736056622080
+status: 1
+tags: []
+user_id: sk

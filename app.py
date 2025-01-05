@@ -18,6 +18,10 @@ import mlflow.sklearn
 
 import logging
 
+# DAGShub integration
+import dagshub
+dagshub.init(repo_owner='susamay.sk', repo_name='mlflow-dagshub-bentoml-pipeline', mlflow=True)
+
 logging.basicConfig(level=logging.WARN)
 logger = logging.getLogger(__name__)
 
@@ -81,8 +85,11 @@ if __name__ == "__main__":
         predictions = lr.predict(train_x)
         signature = infer_signature(train_x, predictions)
 
-        # Fetches the tracking URI of the MLflow server or store being used.
         # Default Tracking URI: MLflow will use file:<current_directory>/mlruns as the tracking URI.
+        # For remote server (DAGShub)
+        remote_server_uri = "https://dagshub.com/susamay.sk/mlflow-dagshub-bentoml-pipeline.mlflow"
+        mlflow.set_tracking_uri(remote_server_uri)
+        # Fetches the tracking URI of the MLflow server or store being used.
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
         # Model registry does not work with file store AS It requires a more advanced backend, such as a database or a remote server, accessible via HTTP(S) or other schemes.
